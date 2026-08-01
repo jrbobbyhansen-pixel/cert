@@ -1,0 +1,52 @@
+.TH MANTA-CERT 1 "manta-cert v1.0.0" "Manta Tools" "User Commands"
+.SH NAME
+manta-cert \- check SSL/TLS certificate expiry dates for domains
+.SH SYNOPSIS
+.B cert [options] <domain...>
+.SH DESCRIPTION
+Check the expiry date of SSL/TLS certificates for one or more domains. Shows days remaining and warns when a certificate is expired or close to expiry. Zero external dependencies.
+.SH OPTIONS
+.TP
+.B domain...
+One or more domain names to check
+.TP
+.B -p, --port PORT
+TCP port to connect to (default: 443)
+.TP
+.B -w, --warn DAYS
+Warning threshold in days (default: 30)
+.TP
+.B -v, --verbose
+Show full certificate details
+.TP
+.B --timeout SECONDS
+Connection timeout (default: 10)
+.TP
+.B --version
+Show version and exit
+.SH EXAMPLES
+.TP
+Check a domain
+.B cert example.com
+.TP
+Check multiple domains
+.B cert example.com google.com github.com
+.TP
+Custom port
+.B cert example.com --port 8443
+.TP
+14-day warning threshold
+.B cert example.com --warn 14
+.SH EXIT CODES
+.TP
+.B 0
+All certificates valid and within warning threshold
+.TP
+.B 1
+Certificate expired or connection error
+.SH AUTHOR
+Bobby Hansen Jr. (Hansen Capital Group LLC)
+.SH REPORTING BUGS
+https://github.com/jrbobbyhansen-pixel/cert/issues
+.SH COPYRIGHT
+Copyright 2026 Hansen Capital Group LLC. License MIT.
