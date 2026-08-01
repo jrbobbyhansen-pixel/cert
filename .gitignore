@@ -1,4 +1,30 @@
+# Python
 __pycache__/
-*.pyc
-.pytest_cache/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
 .venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Environment
+.env
+.env.*
